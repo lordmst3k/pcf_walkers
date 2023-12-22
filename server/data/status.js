@@ -4,4 +4,5 @@ export const Status = {
   Adoptable: 'adoptable',
   Resident: 'resident',
   Holding: 'holding',
+  Moving: 'moving',
 }
