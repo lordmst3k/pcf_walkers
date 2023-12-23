@@ -1,8 +1,9 @@
 export const Status = {
   Adopted: 'adopted',
+  Available: 'available',
   Deceased: 'deceased',
-  Adoptable: 'adoptable',
-  Resident: 'resident',
+  Fostered: 'fostered',
   Holding: 'holding',
   Moving: 'moving',
+  Resident: 'resident',
 }

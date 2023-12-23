@@ -101,12 +101,10 @@ const AddDog = () => {
               id="pinnedCheckbox"
               type="checkbox"
               value={pinned}
-              disabled={comment.length === 0}
               onChange={(e) => setPinned(e.target.value)}
               className="border-2 border-gray-500 px-4 py-2"
             />
             <label
-              disabled={comment.length === 0}
               htmlFor="pinnedCheckbox"
               className="text-x1 ml-2 text-gray-500"
             >
