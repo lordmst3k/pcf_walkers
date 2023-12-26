@@ -1,5 +1,6 @@
+require('dotenv').config()
 import express from 'express'
-import { PORT, mongodbURL } from './config.js'
+import { mongodbURL } from './config.js'
 import mongoose from 'mongoose'
 import { Dog } from './models/dogModel.js'
 import { v4 as uuid } from 'uuid'
@@ -10,20 +11,23 @@ import cors from 'cors'
 
 const app = express()
 
+const PORT = process.env.PORT || 5000
+console.log(PORT)
+
 // Middleware for parsing request body
 app.use(express.json())
 
 // Middleware for handling CORS policy
-// app.use(
-//   cors({
-//     origin: 'http://localhost:3000',
-//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//     allowHeaders: ['Content-Type'],
-//   })
-// )
+app.use(
+  cors({
+    origin: 'http://localhost:5173',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowHeaders: ['Content-Type'],
+  })
+)
 
 // Temporary for development
-app.use(cors())
+// app.use(cors())
 
 app.get('/', (request, response) => {
   console.log(request)
@@ -34,7 +38,7 @@ app.use('/dog', dogRoute)
 app.use('/dogs', dogsRoute)
 
 mongoose
-  .connect(mongodbURL)
+  .connect(process.env.DB_URL)
   .then(() => {
     console.log('App connected to database')
     app.listen(PORT, () => {

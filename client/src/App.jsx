@@ -5,6 +5,7 @@ import RemoveDog from './pages/RemoveDog'
 import CommentDog from './pages/CommentDog'
 import EditDog from './pages/EditDog'
 import Home from './pages/Home'
+import Login from './pages/Login'
 import ViewDog from './pages/ViewDog'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/dog/edit/:id" element={<EditDog />} />
         <Route path="/dog/remove/:id" element={<RemoveDog />} />
         <Route path="/dog/view/:id" element={<ViewDog />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </ThemeProvider>
   )

@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import Spinner from '../components/Spinner'
+import Footer from '../components/Footer'
 
 const AddDog = () => {
   const [name, setName] = useState('')
@@ -121,6 +122,7 @@ const AddDog = () => {
           </div>
         </div>
       )}
+      <Footer />
     </div>
   )
 }

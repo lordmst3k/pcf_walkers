@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import BackButton from '../components/BackButton'
 import Spinner from '../components/Spinner'
+import Footer from '../components/Footer'
 
 const ViewDog = () => {
   const [dog, setDog] = useState({})
@@ -53,6 +54,7 @@ const ViewDog = () => {
           </div>
         </div>
       )}
+      <Footer />
     </div>
   )
 }
